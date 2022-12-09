@@ -1,0 +1,40 @@
+.signup{
+    background-image: url("../../images/sign_up_bg.jpg");
+    background-size: auto;
+    height: 70vh;
+}
+
+.su-div1{
+    background: #043e8f;
+    height: 10vh;
+}
+
+.su-div2{
+    background: #043e8f;
+    height: 20vh;
+}
+
+.su-div3 {
+    background: #043e8f;
+    height: 40vh;
+}
+
+.navbar{
+    background: #043e8f;
+}
+
+.deliv{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.cart-icon{
+    height: 45px;
+}
+
+header{
+    background-image: url("../../images/bg_shop.jpg");
+    background-position: center;
+    background-size: contain;
+}
+

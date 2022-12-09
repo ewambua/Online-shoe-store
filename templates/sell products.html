@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell Products</title>
+    <script src="../static/bootsrap/js/jquery-3.4.0.js"></script>
+    <script src="../static/bootsrap/js/popper.min.js"></script>
+    <script src="../static/bootsrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/bootsrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/bootsrap/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
+    <link href="../static/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container px-4 px-lg-5">
+          <!-- Brand -->
+          <a class="navbar-brand" href="/home">Shoe-Shop.Ke</a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="/shop">Shop</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/sellproducts">Sell Products</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Logout</a>
+              </li>
+            </ul>
+             <form class="d-flex">
+                <a class="nav-link" href="/cart">
+                    <button class="btn btn-outline-light">
+                        Cart
+                        <img class="cart-icon" src="../static/images/cart%20icon.png" alt="">
+                    </button>
+                </a>
+             </form>
+          </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br><br>
+
+     <div class="signup">
+        <h1 class="text-center text-dark mb-2">Sell Products</h1>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 ">
+                {% for message in get_flashed_messages() %}
+                    <p class="text-success text-center">{{ message }}</p>
+                {% endfor %}
+
+                <form method="post" action="">
+                    <input type="text" name="sell" placeholder="Enter name of Product" class="form-control"><br>
+                    <input type="text" name="pesa" placeholder="Enter price of product" class="form-control"><br>
+                    <input type="submit" value="Sell Product" class="btn btn-success btn-block">
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <br>
+    </div>
+
+    <footer class="su-div3"><br>
+      <h3 class="text-center text-white">Our mission</h3><br>
+      <h5 class="text-center text-white">To provide affordable, and unmatched selection of products.</h5>
+    </footer>
+</body>
+</html>

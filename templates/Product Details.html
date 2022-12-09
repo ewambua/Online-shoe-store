@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <script src="../static/bootsrap/js/jquery-3.4.0.js"></script>
+    <script src="../static/bootsrap/js/popper.min.js"></script>
+    <script src="../static/bootsrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/bootsrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/bootsrap/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
+    <link href="../static/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container px-4 px-lg-5">
+          <!-- Brand -->
+          <a class="navbar-brand" href="/home">Shoe-Shop.Ke</a>
+
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link active" href="/shop">Shop</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sellproducts">Sell Products</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Logout</a>
+              </li>
+            </ul>
+
+                <a class="nav-link" href="/cart">
+                    <button class="btn btn-outline-light">
+                        Cart
+                        <img class="cart-icon" src="../static/images/cart%20icon.png" alt="">
+                    </button>
+                </a>
+          </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+        {% for message in get_flashed_messages() %}
+                {{ message }}
+            {% endfor %}
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." />
+                <p>Product Image</p>
+                </div>
+                <div class="col-md-6">
+                    {% for product in productdetails %}
+                        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+                        <div class="fs-5 mb-5">
+                            <span>{{ product.price }}</span>
+                        </div>
+                        <h5>Available Sizes - S|M|L</h5>
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <a class="btn btn-success" href="/shop">Back to Shop</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
